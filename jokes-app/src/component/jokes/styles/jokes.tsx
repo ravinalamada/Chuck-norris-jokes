@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export const Container = styled.div``
+export const Container = styled.div`
+  padding-block-start: 48px;
+  padding-inline-start: 58px;
+  padding-inline-end: 58px;
+`
 
 export const Image = styled.img`
   width: 100%;
@@ -16,5 +20,8 @@ export const Joke = styled.p`
   letter-spacing: normal;
   text-align: left;
   color: #34394f;
+  margin: 0;
+  padding-block-start: 24px;
+  padding-block-end: 32px;
 }
 `

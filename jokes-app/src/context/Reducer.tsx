@@ -1,4 +1,5 @@
 import { Action, State } from '../utils/Types'
+import { initialValue } from './GlobalContextProvider'
 
 const reducer = (state: State, action: Action) => {
   switch (action.type) {
@@ -25,6 +26,11 @@ const reducer = (state: State, action: Action) => {
         ...state,
         loading: false,
         category: action.payload,
+      }
+    case 'RESET':
+      return {
+        ...state,
+        nameToReplace: initialValue.nameToReplace,
       }
     default:
       return state

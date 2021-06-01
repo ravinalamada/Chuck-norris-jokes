@@ -1,10 +1,6 @@
 import React from 'react'
 import { Container, Joke, Image } from './styles/jokes'
 
-type LayoutProps = {
-  children: React.ReactNode
-}
-
 export default function Jokes({ children, ...restProps }: any) {
   return <Container {...restProps}>{children}</Container>
 }

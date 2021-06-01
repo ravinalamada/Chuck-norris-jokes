@@ -4,7 +4,7 @@ import { State } from '../utils/Types'
 import reducer from './Reducer'
 import { RANDOM_API, LIMIT_TO } from '../constants'
 
-const initialValue: State = {
+export const initialValue: State = {
   loading: true,
   jokes: [],
   nameToReplace: '',
@@ -45,7 +45,7 @@ export const GlobalContext: React.FC = ({ children }) => {
       category: state.category,
     }
     setJokesData(nameObj)
-    state.setNameToReplace(' ')
+    dispatch({ type: 'RESET' })
   }
 
   useEffect(() => {

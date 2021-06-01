@@ -21,3 +21,4 @@ export type Action =
   | { type: 'SET_NAME_TO_REPLACE_NAME'; payload: string }
   | { type: 'SET_CATEGORY'; payload: string }
   | { type: 'FETCH_JOKES_WITH_CATEGORY'; payload: jokeType[] }
+  | { type: 'RESET' }

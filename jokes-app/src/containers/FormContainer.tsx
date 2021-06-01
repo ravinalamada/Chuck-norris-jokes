@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Context } from '../context/GlobalContextProvider'
 import { Form } from '../component'
+import categoriesData from '../utils/categoriesData'
 
 function FormContainer() {
   const {
@@ -23,32 +24,28 @@ function FormContainer() {
   }
 
   return (
-    <div className='App'>
-      <Form onSubmit={handleSubmit}>
-        <Form.Fieldset>
-          <Form.Select
-            name='category'
-            placeholder='Categories'
-            value={category}
-            onChange={setCategory}>
-            <option value='Categories'>Categories</option>
-            <option value='nerdy'>nerdy</option>
-            <option value='explicit'>explicit</option>
-          </Form.Select>
-        </Form.Fieldset>
-        <Form.Fieldset>
-          <Form.Input
-            value={nameToReplace}
-            placeholder='Impersonate Chuck Norris'
-            onChange={setNameToReplace}
-            name='firstName'
-          />
-        </Form.Fieldset>
-        <Form.Button type='submit'>
-          Draw a random {buttonLabelName} Joke
-        </Form.Button>
-      </Form>
-    </div>
+    <Form onSubmit={handleSubmit}>
+      <Form.Fieldset>
+        <Form.Select name='category' value={category} onChange={setCategory}>
+          {categoriesData.map((cat) => (
+            <React.Fragment key={cat.id}>
+              <option value={cat.name}>{cat.name}</option>
+            </React.Fragment>
+          ))}
+        </Form.Select>
+      </Form.Fieldset>
+      <Form.Fieldset>
+        <Form.Input
+          type='text'
+          value={nameToReplace}
+          placeholder='Impersonate Chuck Norris'
+          onChange={setNameToReplace}
+        />
+      </Form.Fieldset>
+      <Form.Button type='submit'>
+        Draw a random {buttonLabelName} Joke
+      </Form.Button>
+    </Form>
   )
 }
 
