@@ -1,0 +1,3 @@
+# Ignore lock files as we are using proxy server for packages
+yarn.lock
+package-lock.json
