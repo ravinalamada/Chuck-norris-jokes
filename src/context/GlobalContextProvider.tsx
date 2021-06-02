@@ -53,6 +53,7 @@ export const GlobalContext: React.FC = ({ children }) => {
     } else {
       fetchRandomJokes()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [jokesData])
 
   return (
