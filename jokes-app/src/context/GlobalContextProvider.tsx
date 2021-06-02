@@ -45,7 +45,6 @@ export const GlobalContext: React.FC = ({ children }) => {
       category: state.category,
     }
     setJokesData(nameObj)
-    dispatch({ type: 'RESET' })
   }
 
   useEffect(() => {

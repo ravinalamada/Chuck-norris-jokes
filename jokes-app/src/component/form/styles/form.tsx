@@ -24,6 +24,7 @@ export const Select = styled.select`
   width: 100%;
   height: 100%;
   border: solid 1px #c4c4c4;
+  border-radius: 4px;
   font-family: Inter;
   font-size: 16px;
   font-weight: normal;
@@ -43,12 +44,15 @@ export const Select = styled.select`
   outline: #34394f;
 `
 
+export const Option = styled.option``
+
 export const Input = styled.input`
   width: 100%;
   height: 56px;
   padding: 0;
   marign: 0;
   border: solid 1px #c4c4c4;
+  border-radius: 4px;
   background-color: #ffffff;
   outline: #34394f;
   font-family: Inter;
@@ -77,9 +81,17 @@ export const Input = styled.input`
 `
 
 export const Button = styled.button`
-  border-radius: 6px;
   background-color: #34394f;
   border: none;
+  border-radius: 4px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.63;
+  letter-spacing: -0.52px;
+  text-align: center;
   color: #ffffff;
   padding: 0;
   height: 58px;

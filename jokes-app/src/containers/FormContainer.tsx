@@ -29,7 +29,7 @@ function FormContainer() {
         <Form.Select name='category' value={category} onChange={setCategory}>
           {categoriesData.map((cat) => (
             <React.Fragment key={cat.id}>
-              <option value={cat.name}>{cat.name}</option>
+              <Form.Option value={cat.name}>{cat.name}</Form.Option>
             </React.Fragment>
           ))}
         </Form.Select>

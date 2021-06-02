@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
 import { Context } from '../context/GlobalContextProvider'
 import chuckNorrisPhoto from '../img/chuck-norris-photo.png'
+import RandomPhoto from '../img/random-photo.png'
 import { Jokes } from '../component'
 
 export default function JokeContainer() {
-  const { jokes, jokesData } = useContext(Context)
+  const { jokes, jokesData, loading } = useContext(Context)
 
   // Split the jokes
   const splittedJoke = jokes?.joke?.split(' ')
@@ -26,11 +27,19 @@ export default function JokeContainer() {
   })
 
   const jokeToDisplay = mappedJoke?.join(' ')
+  const checkJokeData = jokesData.name !== '' || jokesData.category !== ''
 
   return (
     <Jokes>
-      <Jokes.Image src={chuckNorrisPhoto} alt='Chuck Norris' />
-      <Jokes.Joke>"{jokeToDisplay}"</Jokes.Joke>
+      <Jokes.Image
+        src={checkJokeData ? RandomPhoto : chuckNorrisPhoto}
+        alt='Chuck Norris'
+      />
+      {loading ? (
+        <p>Loading ....</p>
+      ) : (
+        <Jokes.Joke>"{jokeToDisplay}"</Jokes.Joke>
+      )}
     </Jokes>
   )
 }

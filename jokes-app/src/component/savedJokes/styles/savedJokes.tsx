@@ -15,6 +15,7 @@ export const Base = styled.div`
   align-items: center;
   flex-basis: 146px;
   height: 58px;
+  border-radius: 2px;
   background-color: #f5f6f8;
   justify-content: space-around;
 `
@@ -41,6 +42,7 @@ export const SaveButton = styled.button`
   object-fit: contain;
   padding: 0;
   border: none;
+  border-radius: 4px;
   font-family: Inter;
   font-size: 16px;
   font-weight: 500;
@@ -49,5 +51,11 @@ export const SaveButton = styled.button`
   line-height: 1.63;
   letter-spacing: -0.52px;
   text-align: center;
-  color: ;
+  background-color: #f5f6f8;
+  color: #34394f;
+
+  &:hover {
+    background-color: #34394f;
+    color: #ffffff;
+  }
 `
