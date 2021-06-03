@@ -3,7 +3,7 @@ import React from 'react'
 export type jokeType = {
   id: number
   joke: string
-  categories: []
+  categories: [string]
 }
 
 export type State = {

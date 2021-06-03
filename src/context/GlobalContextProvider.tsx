@@ -6,7 +6,7 @@ import { RANDOM_API, LIMIT_TO } from '../constants'
 
 export const initialValue: State = {
   loading: true,
-  jokes: { id: 0, joke: '', categories: [] },
+  jokes: { id: 0, joke: '', categories: [''] },
   nameToReplace: '',
   category: '',
   jokesData: { name: '', category: '' },
