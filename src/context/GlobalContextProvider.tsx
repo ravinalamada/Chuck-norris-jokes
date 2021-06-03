@@ -52,7 +52,6 @@ export const GlobalContext: React.FC = ({ children }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.jokesData])
-  console.log(state.jokesData)
 
   return (
     <Context.Provider
