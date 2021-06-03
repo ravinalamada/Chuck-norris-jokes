@@ -1,6 +1,6 @@
 import { Action, State } from '../utils/Types'
 
-const reducer = (state: State, action: Action) => {
+const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case 'FETCH_RANDOM_JOKES':
       return {

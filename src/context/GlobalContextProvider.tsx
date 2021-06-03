@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect, createContext } from 'react'
 import axios from 'axios'
-import { State } from '../utils/Types'
+import { Action, State } from '../utils/Types'
 import reducer from './Reducer'
 import { RANDOM_API, LIMIT_TO } from '../constants'
 
@@ -15,10 +15,10 @@ export const initialValue: State = {
   handleSubmit: () => {},
 }
 
-export const Context = createContext(initialValue)
+export const Context = createContext(initialValue as State)
 
 export const GlobalContext: React.FC = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialValue)
+  const [state, dispatch] = useReducer(reducer, initialValue as State)
 
   const fetchRandomJokes = async () => {
     const getJokesData = await axios(RANDOM_API)
