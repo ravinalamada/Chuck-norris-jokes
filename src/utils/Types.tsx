@@ -8,7 +8,7 @@ export type jokeType = {
 
 export type State = {
   loading: boolean
-  jokes: jokeType[]
+  jokes: jokeType
   nameToReplace: string
   category: string
   setNameToReplace: (e: React.ChangeEvent<HTMLInputElement>) => void
