@@ -26,6 +26,12 @@ const reducer = (state: State, action: Action) => {
         loading: false,
         category: action.payload,
       }
+    case 'SET_JOKES_DATA':
+      return {
+        ...state,
+        loading: false,
+        jokesData: action.payload,
+      }
     default:
       return state
   }

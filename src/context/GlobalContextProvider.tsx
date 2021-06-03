@@ -9,6 +9,7 @@ export const initialValue: State = {
   jokes: [],
   nameToReplace: '',
   category: '',
+  jokesData: { name: '', category: '' },
   setCategory: () => {},
   setNameToReplace: () => {},
   handleSubmit: () => {},
@@ -18,10 +19,6 @@ export const Context = createContext(initialValue)
 
 export const GlobalContext: React.FC = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialValue)
-  const [jokesData, setJokesData] = useState({
-    name: '',
-    category: '',
-  })
 
   const fetchRandomJokes = async () => {
     const getJokesData = await axios(RANDOM_API)
@@ -44,17 +41,18 @@ export const GlobalContext: React.FC = ({ children }) => {
       name: state.nameToReplace,
       category: state.category,
     }
-    setJokesData(nameObj)
+    dispatch({ type: 'SET_JOKES_DATA', payload: nameObj })
   }
 
   useEffect(() => {
-    if (jokesData.category !== '') {
+    if (state.jokesData.category !== '') {
       fetchJokesWithCategory()
     } else {
       fetchRandomJokes()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [jokesData])
+  }, [state.jokesData])
+  console.log(state.jokesData)
 
   return (
     <Context.Provider
@@ -63,6 +61,7 @@ export const GlobalContext: React.FC = ({ children }) => {
         loading: state.loading,
         nameToReplace: state.nameToReplace,
         category: state.category,
+        jokesData: state.jokesData,
         setNameToReplace: (e) =>
           dispatch({
             type: 'SET_NAME_TO_REPLACE_NAME',
@@ -74,7 +73,6 @@ export const GlobalContext: React.FC = ({ children }) => {
             payload: e.target.value,
           }),
         handleSubmit,
-        jokesData,
       }}>
       {children}
     </Context.Provider>
