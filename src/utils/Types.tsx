@@ -14,7 +14,7 @@ export type State = {
   setNameToReplace: (e: React.ChangeEvent<HTMLInputElement>) => void
   setCategory: (e: React.ChangeEvent<HTMLSelectElement>) => void
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void
-  jokesData: {}
+  jokesData: { name: string; category: string }
 }
 
 export type Action =
