@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect, createContext } from 'react'
 import axios from 'axios'
-import { Action, State } from '../utils/Types'
+import { State } from '../utils/Types'
 import reducer from './Reducer'
 import { RANDOM_API, LIMIT_TO } from '../constants'
 
