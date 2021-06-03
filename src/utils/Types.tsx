@@ -18,8 +18,8 @@ export type State = {
 }
 
 export type Action =
-  | { type: 'FETCH_RANDOM_JOKES'; payload: jokeType[] }
+  | { type: 'FETCH_RANDOM_JOKES'; payload: jokeType }
   | { type: 'SET_NAME_TO_REPLACE_NAME'; payload: string }
   | { type: 'SET_CATEGORY'; payload: string }
-  | { type: 'FETCH_JOKES_WITH_CATEGORY'; payload: jokeType[] }
+  | { type: 'FETCH_JOKES_WITH_CATEGORY'; payload: jokeType }
   | { type: 'SET_JOKES_DATA'; payload: {} }

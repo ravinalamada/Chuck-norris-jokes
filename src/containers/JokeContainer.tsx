@@ -7,6 +7,8 @@ import { Jokes } from '../component'
 export default function JokeContainer() {
   const { jokes, jokesData, loading } = useContext(Context)
 
+  console.log(jokes)
+
   // Split the jokes
   const splittedJoke = jokes?.joke?.split(' ')
 
