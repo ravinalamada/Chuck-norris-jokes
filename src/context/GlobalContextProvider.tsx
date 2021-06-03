@@ -62,12 +62,12 @@ export const GlobalContext: React.FC = ({ children }) => {
         nameToReplace: state.nameToReplace,
         category: state.category,
         jokesData: state.jokesData,
-        setNameToReplace: (e) =>
+        setNameToReplace: (e: React.ChangeEvent<HTMLInputElement>) =>
           dispatch({
             type: 'SET_NAME_TO_REPLACE_NAME',
             payload: e.target.value,
           }),
-        setCategory: (e) =>
+        setCategory: (e: React.ChangeEvent<HTMLSelectElement>) =>
           dispatch({
             type: 'SET_CATEGORY',
             payload: e.target.value,
